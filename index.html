@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sanchaai's Space</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%221em%22 font-size=%2280%22>☕</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/htmltypist.js/dist/typist.css">
+        <link rel="stylesheet" href='/static/styles.css' />
+        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
+    </head>
+    <body>
+        <h3 class="typist" data-typist-repeat="1" data-typist-cursor-show="1">$ neofetch --config sanchaai.conf</h3>
+        <div class="flex-container">
+            <img src="../static/me.jpg" alt="A pic of me!">
+            <div class="side-text">
+                <p>
+                <span class="subtitle"><b><em>Sanchaai</em> @ <span id="hostname">127.0.0.1</span> </b></span> <br>
+                ------------------------ <br>
+                <span class="subtitle">OS: </span> <span id="os">Pop!_OS 20.04 LTS x86_64</span> <br>
+                <span class="subtitle">Host: </span>VirtualBox 2.4 <br>
+                <span class="subtitle">System Uptime: </span> <span id="uptime">0</span> <br>
+                <span class="subtitle">Uni: </span>University of Toronto <br>
+                <span class="subtitle">Major: </span>Computer Science <br>
+                <span class="subtitle">Internship: </span>Mozilla Firefox <br>
+                <span class="subtitle">Research Area: </span>Network Science <br>
+                <span class="subtitle">Hobbies: </span>[500 Internal Server Error] <br>
+                <span class="subtitle">Music Prefs: </span>Mainly KPop, JPop, Rap <br>
+                <span class="subtitle">Fav Dessert: </span>Hot Ice Cream Waffles <br>
+                <span class="subtitle">Languages: </span>
+                    <!-- Py, C, Kt, R, Bash, Java -->
+                    <i class="devicon-python-plain"></i>
+                    <i class="devicon-c-plain"></i>
+                    <i class="devicon-kotlin-plain"></i>
+                    <i class="devicon-r-plain"></i>
+                    <i class="devicon-bash-plain"></i>
+                    <i class="devicon-java-plain"></i>
+                    <br>
+                <span class="subtitle">Resume: </span><a href="https://drive.google.com/file/d/1vhOjCo_Aa6LksDRSAzCJFTISAjXFml1s/view?usp=sharing">drive.google.com</a> <br>
+                <span class="subtitle">GitHub: </span><a href="https://github.com/sm0ca/">github.com/sm0ca</a> <br>
+                <span class="subtitle">LinkedIn: </span><a href="https://www.linkedin.com/in/sanchaai/">linkedin.com/in/sanchaai</a> <br>
+                <span class="subtitle">Instagram: </span><a href="https://www.instagram.com/sancha.ai/">instagram.com/sancha.ai</a> <br>
+                <span class="subtitle">Contact Me: </span><a href="mailto:sanchaai.mathi@gmail.com">sanchaai.mathi@gmail.com</a> <br>
+                </p>
+            </div>
+        </div>
+        <script>
+            var up = 0;
+            document.getElementById("os").innerHTML = window.navigator.platform;
+            setInterval(function () {up += 1; document.getElementById("uptime").innerHTML = new Date(1000 * up).toISOString().substring(11, 19)}, 1000);
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {document.getElementById("hostname").innerHTML = data.ip})
+                .catch(error => {document.getElementById("hostname").innerHTML = "127.0.0.1"});
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/htmltypist.js/dist/typist.js"></script>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+html {
+  --accentcolor: rgb(242, 220, 200);
+  --textcolor: rgb(206, 221, 219);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  scroll-behavior:smooth;
+  background: rgb(30, 25, 25);
+  margin:0;
+  padding:0;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-size: medium;
+  color: var(--textcolor)
+}
+
+a:link {
+  color: var(--textcolor);
+  background-color: transparent;
+  /* text-decoration: none; */
+}
+
+a:visited {
+  color: var(--textcolor);
+  background-color: transparent;
+  /* text-decoration: none; */
+}
+
+a:active {
+  color: var(--textcolor);
+  background-color: transparent;
+  /* text-decoration: none; */
+}
+
+img {
+  width: 24em;
+  height: 24em;
+  margin: 2em;
+  /* align-self: stretch; */
+}
+
+.flex-container {
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* -ms-transform: translate(-50%, -50%); */
+  /* transform: translate(-50%, -50%); */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border-style: solid;
+  border-color: rgba(242, 220, 200, 0.8);
+  opacity: 0;
+  animation: 0.5s 4.4s fadein;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 850px) {
+  html {
+    padding-top: 4em;
+    flex-direction: column;
+    align-items: center;
+    justify-content:left;
+  }
+  .flex-container {
+    /* position: absolute;   */
+    /* top: 10%; */
+    flex-direction: column;
+    padding-bottom: 1em;
+    margin-bottom: 4em;
+  }
+}
+
+.subtitle {
+  color: var(--accentcolor)
+}
+
+.spacer {
+  width: 50px;
+  height: 50px;
+}
+
+.side-text {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2em;
+  /* line-height: 0px; */
+}
+
+
+/* Modified from typist.css */
+.cursor:after {
+  color: var(--textcolor);
+}
+
+@keyframes fadein {
+  from {opacity:0;}
+  to {opacity:1;}
+}
