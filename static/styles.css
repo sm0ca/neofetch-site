@@ -56,7 +56,7 @@ img {
   animation-fill-mode: forwards;
 }
 
-@media (max-width: 850px) {
+@media only screen and (max-width: 54em) {
   html {
     padding-top: 4em;
     flex-direction: column;
