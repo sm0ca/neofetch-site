@@ -52,8 +52,77 @@ img {
   border-style: solid;
   border-color: rgba(242, 220, 200, 0.8);
   opacity: 0;
-  animation: 0.5s 4.4s fadein;
+  animation: 0.5s 4.55s fadein;
   animation-fill-mode: forwards;
+}
+
+.subtitle {
+  color: var(--accentcolor)
+}
+
+.spacer {
+  width: 50px;
+  height: 50px;
+}
+
+.side-text {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2em;
+  /* line-height: 0px; */
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.enter-key {
+  display: none;
+  opacity: 0;
+  background-color: transparent;
+  border-color: var(--textcolor);
+  color: var(--textcolor);
+  font-size: x-small;
+  font-weight: bolder;
+  border-style: solid;
+  border-radius: 0.25em;
+  border-width: 0.2em;
+  margin-left: 1.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  animation: fadein 0.25s 3.8s, click 0.25s 4.2s, unclick 0.25s 4.45s, fadeout 0.25s 4.8s;
+  animation-fill-mode: forwards;
+}
+
+.mobile-enter-key {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  height: 1em;
+  background-color: transparent;
+  border-color: var(--textcolor);
+  color: var(--textcolor);
+  font-size: medium;
+  font-weight: bolder;
+  border-style: solid;
+  border-radius: 0.25em;
+  border-width: 0.125em;
+  margin-left: 1em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  padding-top: 0em;
+  padding-bottom: 0.2em;
+  animation: fadein 0.25s 3.8s, click 0.25s 4.2s, unclick 0.25s 4.45s, fadeout 0.25s 4.8s;
+  animation-fill-mode: forwards;
+}
+
+/* Modified from typist.css */
+.cursor:after {
+  color: var(--textcolor);
 }
 
 @media only screen and (max-width: 54em) {
@@ -84,31 +153,45 @@ img {
     margin-right: 1.75em;
     font-size: small;
   }
-}
-
-.subtitle {
-  color: var(--accentcolor)
-}
-
-.spacer {
-  width: 50px;
-  height: 50px;
-}
-
-.side-text {
-  display: flex;
-  flex-direction: column;
-  margin-right: 2em;
-  /* line-height: 0px; */
-}
-
-
-/* Modified from typist.css */
-.cursor:after {
-  color: var(--textcolor);
+  .enter-key {
+    display: none;
+    animation: none;
+  }
+  .mobile-enter-key {
+    /* display: flex; */
+    margin-left: 0.35em;
+    /* animation: none; */
+  }
 }
 
 @keyframes fadein {
   from {opacity:0;}
   to {opacity:1;}
+}
+
+@keyframes fadeout {
+  from {opacity:1;}
+  to {opacity:0;}
+}
+
+@keyframes click {
+  from {
+    background-color: rgb(30, 25, 25);
+    color: var(--textcolor);
+  }
+  to {
+    background-color: var(--textcolor);
+    color: rgb(30, 25, 25);
+  }
+}
+
+@keyframes unclick {
+  from {
+    background-color: var(--textcolor);
+    color: rgb(30, 25, 25);
+  }
+  to {
+    background-color: rgb(30, 25, 25);
+    color: var(--textcolor);
+  }
 }
